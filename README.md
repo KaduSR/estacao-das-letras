@@ -64,4 +64,3 @@ src/
 Desenvolvido por **[Kadu Dev](https://www.linkedin.com/in/kaduesr/)** — estudante de Engenharia de Software, apaixonado por tecnologia, design e criação de experiências digitais.
 
 ---
-
