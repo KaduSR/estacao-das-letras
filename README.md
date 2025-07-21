@@ -50,7 +50,6 @@ src/
 └── books.ts
 ```
 
-
 ---
 
 ## 📸 Preview (wireframe)
