@@ -8,7 +8,7 @@ export function Logo() {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src="/Logo.svg"
+        src="/icons/Logo.svg"
         alt="Logo Estação das Letras"
         width={80}
         height={80}
