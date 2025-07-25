@@ -69,7 +69,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <div
-      className="mt-[5px] mx-auto rounded-lg shadow-xl overflow-hidden bg-white border border-gray-600 relative"
+      className="mx-auto rounded-lg shadow-2xl shadow-gray-500 overflow-hidden bg-white border border-gray-700 relative mt-2"
       style={{ width: "1694.11px", height: "426px" }}
     >
       <div
@@ -87,22 +87,6 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             height={426}
             className="w-[1694.11px] h-[426px] object-cover flex-shrink-0"
           />
-        ))}
-      </div>
-      <div className="flex justify-center space-x-2 mt-[8px] mb-2 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`block w-3 h-3 rounded-full cursor-pointer transition-colors duration-300 ${
-              index === currentIndex
-                ? "bg-gray-700"
-                : "bg-gray-400 hover:bg-gray-500"
-            }`}
-            onClick={() => {
-              showSlide(index);
-              resetInterval();
-            }}
-          ></span>
         ))}
       </div>
     </div>
