@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       alt: "Novos Lançamentos de Livros",
     },
     {
-      src: "/slider/2212.png",
+      src: "/slider/2212.jpg",
       alt: "Oferta Especial de Aniversário",
     },
   ];

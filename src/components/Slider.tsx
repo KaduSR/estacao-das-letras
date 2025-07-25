@@ -69,7 +69,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <div
-      className="mx-auto rounded-lg shadow-xl overflow-hidden bg-white"
+      className="mt-[5px] mx-auto rounded-lg shadow-xl overflow-hidden bg-white border border-gray-600 relative"
       style={{ width: "1694.11px", height: "426px" }}
     >
       <div
@@ -89,7 +89,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
           />
         ))}
       </div>
-      <div className="flex justify-center space-x-2 mt-[8px] mb-2 absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+      <div className="flex justify-center space-x-2 mt-[8px] mb-2 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
         {images.map((_, index) => (
           <span
             key={index}
