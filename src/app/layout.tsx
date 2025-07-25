@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { ReactNode } from "react";
 import Header from "@/components/header/Header";
-import TopInfoBar from "@/components/TopInfoBar";
+import TopInfoBar from "@/components/topinfobar/TopInfoBar";
 
 export const metadata = {
   title: "Estação das Letras",
