@@ -17,11 +17,11 @@ interface FeatureCardsProps {
 
 const FeatureCards: React.FC<FeatureCardsProps> = ({ cards }) => {
   return (
-    <div className="mx-auto flex justify-center space-x-6 my-8">
+    <div className="mx-auto flex justify-center space-x-6 my-8 text-center">
       {cards.map((card) => (
         <div
           key={card.id}
-          className="bg-gray-300  shadow-md hover:shadow-lg shadow-gray-400 rounded-3xl transition-shadow duration-300 
+          className="bg-gray-300 shadow-md hover:shadow-lg shadow-gray-400 rounded-3xl transition-shadow duration-300
                 w-[535px] h-[174px] flex items-center cursor-pointer mt-2"
           onClick={card.onClick}
         >

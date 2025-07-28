@@ -37,6 +37,23 @@ const ProductCarouselClient: React.FC = () => {
             author: "Author 3",
             price: 49.99,
         },
+         {
+            id: "4",
+            imageSrc: "/LivrosDestaque/product3.jpeg",
+            imageAlt: "Product 3",
+            title: "Product 3",
+            author: "Author 3",
+            price: 49.99,
+        },
+         {
+            id: "5",
+            imageSrc: "/LivrosDestaque/product3.jpeg",
+            imageAlt: "Product 3",
+            title: "Product 3",
+            author: "Author 3",
+            price: 49.99,
+        },
+        
     ];
 
     return (
