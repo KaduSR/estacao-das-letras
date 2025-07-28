@@ -1,7 +1,8 @@
-import CategorySubHeader from "@/components/CategorySubHeader";
-import FeatureCards from "@/components/FeatureCards";
+import CategorySubHeader from "@/components/CategorySubHeader/CategorySubHeader";
+import FeatureCardsClient from "@/components/FeatureCards/FeatureCardsClient";
+import ProductCarouselClient from "@/components/ProductCarousel/ProductCarouselClient";
 import Header from "@/components/header/Header";
-import Slider from "@/components/Slider";
+import Slider from "@/components/Slide/Slider";
 import TopInfoBar from "@/components/topinfobar/TopInfoBar";
 import "@/styles/globals.css";
 import { ReactNode } from "react";
@@ -11,20 +12,12 @@ interface SliderImage {
   alt: string;
 }
 
-interface CardItem {
-  id: string;
-  label: string;
-  onClick?: () => void;
-  href?: string;
-}
-
 export const metadata = {
   title: "Estação das Letras",
   description: "Livraria online com alma e propósito",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  
   const sliderImages: SliderImage[] = [
     { src: "/slider/2210.jpg", alt: "Promoção de Verão" },
     {
@@ -37,26 +30,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     },
   ];
 
-    const featureCardsData: CardItem[] = [
-      {
-        id: "card1",
-        label: "Livros em Destaque",
-        onClick: () => console.log("Clicou em Destaque!"),
-      },
-      {
-        id: "card2",
-        label: "Promoções Imperdíveis",
-        onClick: () => console.log("Clicou em Promoções!"),
-      },
-      {
-        id: "card3",
-        label: "Novidades",
-        onClick: () => console.log("Clicou em Novidades!"),
-      },
-    ];
-
-
-
   return (
     <html lang="pt-BR">
       <body>
@@ -64,7 +37,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <CategorySubHeader />
         <Slider images={sliderImages} />
-        <FeatureCards cards={featureCardsData} />
+        <FeatureCardsClient />
+        <ProductCarouselClient />
         {children}
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 
 interface ImageType {
   src: string;
@@ -19,41 +19,40 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   const totalSlides = images.length;
 
-  const showSlide = (index: number) => {
-    let newIndex = index;
-    if (newIndex >= totalSlides) {
-      newIndex = 0;
-    } else if (newIndex < 0) {
-      newIndex = totalSlides - 1;
-    }
-    setCurrentIndex(newIndex);
-  };
+  const showSlide = useCallback(
+    (index: number) => {
+      let newIndex = index;
+      if (newIndex >= totalSlides) {
+        newIndex = 0;
+      } else if (newIndex < 0) {
+        newIndex = totalSlides - 1;
+      }
+      setCurrentIndex(newIndex);
+    },
+    [totalSlides]
+  );
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     showSlide(currentIndex + 1);
-  };
+  }, [currentIndex, showSlide]);
 
-  const startAutoSlide = () => {
-    slideIntervalRef.current = setInterval(nextSlide, 5000);
-  };
-
-  const stopAutoSlide = () => {
+  const stopAutoSlide = useCallback(() => {
     if (slideIntervalRef.current) {
       clearInterval(slideIntervalRef.current);
     }
-  };
+  }, []);
 
-  const resetInterval = () => {
+  const startAutoSlide = useCallback(() => {
     stopAutoSlide();
-    startAutoSlide();
-  };
+    slideIntervalRef.current = setInterval(nextSlide, 5000);
+  }, [nextSlide, stopAutoSlide]);
 
   useEffect(() => {
     startAutoSlide();
     return () => {
       stopAutoSlide();
     };
-  }, [currentIndex]);
+  }, [currentIndex, startAutoSlide, stopAutoSlide]);
 
   useEffect(() => {
     if (sliderImagesRef.current) {
@@ -69,7 +68,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <div
-      className="mx-auto rounded-lg shadow-2xl shadow-gray-500 overflow-hidden bg-white border border-gray-700 relative mt-2"
+      className="mx-auto rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-700 relative mt-2"
       style={{ width: "1694.11px", height: "426px" }}
     >
       <div

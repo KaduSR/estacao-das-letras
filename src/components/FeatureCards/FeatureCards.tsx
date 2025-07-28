@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-interface CardItem {
+interface ImageType {
   id: string;
   label: string;
   onClick: () => void;
@@ -12,7 +12,7 @@ interface CardItem {
 }
 
 interface FeatureCardsProps {
-  cards: CardItem[];
+  cards: ImageType[];
 }
 
 const FeatureCards: React.FC<FeatureCardsProps> = ({ cards }) => {
@@ -21,8 +21,8 @@ const FeatureCards: React.FC<FeatureCardsProps> = ({ cards }) => {
       {cards.map((card) => (
         <div
           key={card.id}
-          className="bg-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
-                w-[550px] h-[250px] flex items-center cursor-pointer"
+          className="bg-gray-300  shadow-md hover:shadow-lg shadow-gray-400 rounded-3xl transition-shadow duration-300 
+                w-[535px] h-[174px] flex items-center cursor-pointer mt-2"
           onClick={card.onClick}
         >
           {card.label && (
@@ -34,8 +34,8 @@ const FeatureCards: React.FC<FeatureCardsProps> = ({ cards }) => {
             <Image
               src={card.imageSrc}
               alt={card.imageAlt || card.label}
-              width={100} 
-              height={100} 
+              width={100}
+              height={100}
             />
           )}
         </div>
