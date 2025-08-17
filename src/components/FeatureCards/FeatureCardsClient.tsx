@@ -12,10 +12,11 @@ interface CardItem {
 
 const FeatureCardsClient: React.FC = () => {
     const featureCardsData: CardItem[] = [
-        {id: "card1", onClick: () => console.log("Clicou em Destaque!")},
-        {id: "card2", onClick: () => console.log("Clicou em Promoções!")},
-        {id: "card3", onClick: () => console.log("Clicou em Novidades!")},
-    ];
+    {id: "card1", label: "Destaque", onClick: () => console.log("Clicou em Destaque!")},
+    {id: "card2", label: "Promoções", onClick: () => console.log("Clicou em Promoções!")},
+    {id: "card3", label: "Novidades", onClick: () => console.log("Clicou em Novidades!")},
+];
+
 
     return (
             <FeatureCards cards={featureCardsData} />
